@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request, render_template
 from generarNumero import generar_numero
-pedirnumero = Flask(__name__)
+pedirnumero = Flask(__name__, template_folder='.')
 
 
+
+# puntajeParcial = 
 
 @pedirnumero.route('/', methods=['GET', 'POST'])
 def adivina_numero():
@@ -14,7 +16,7 @@ def adivina_numero():
         
 
 
-if __name__ == '__name__':
+if __name__ == '__main__':
     pedirnumero.run(debug=True)
     
     
