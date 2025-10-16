@@ -35,14 +35,19 @@ def puntaje():
             puntos = 0
     else:
         if numero_usuario == numero_aleatorio:
+            print("acertaste")
             puntos = 100
         elif (numero_aleatorio - numero_usuario) <= 9:
+            print("quedaste muy cerca")
             puntos = 75
         elif (numero_aleatorio - numero_usuario) <= 19:
+            print("quedaste cerca")
             puntos = 50
         elif (numero_aleatorio - numero_usuario) <= 39:
+            print("quedaste cerca")
             puntos = 25
         else:
+            print("ni te acercaste")
             puntos = 0        
     
     return puntos
