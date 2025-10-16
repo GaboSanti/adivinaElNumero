@@ -11,10 +11,9 @@ from flask import Flask, jsonify, request
 import json
 import random
 
-def puntaje():
+def puntaje(intento_entero):
     numero_aleatorio = random.randint(1, 100)
-    datos = request.get_json()
-    numero_usuario = datos.get('numero_usuario')
+    numero_usuario = intento_entero
     
     if numero_usuario > numero_aleatorio:
         
