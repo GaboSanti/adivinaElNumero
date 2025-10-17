@@ -4,7 +4,7 @@ from puntaje import puntaje
 pedirnumero = Flask(__name__)
 
 puntaje_total = 0
-intentos = 1
+intentos = 0
 
 @pedirnumero.route('/', methods=['GET'])
 @pedirnumero.route('/numero', methods=['GET'])
