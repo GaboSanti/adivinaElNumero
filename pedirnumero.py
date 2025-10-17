@@ -31,6 +31,7 @@ def procesar_intento():
                 
                 puntos_ganados, mensaje_juego, numero_secreto  = puntaje(intento_entero)
                 puntaje_total += puntos_ganados
+                intentos+=1
         
                 mensaje_respuesta = f"El número era {numero_secreto} <br> {mensaje_juego} <br> Ganaste {puntos_ganados} puntos. <br> Total acumulado: {puntaje_total}"
 
