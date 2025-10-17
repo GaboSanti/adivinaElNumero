@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from puntaje import puntaje 
-
+from Guardar_Puntajes import guardar_puntaje_json
 pedirnumero = Flask(__name__)
 
 puntaje_total = 0
@@ -8,12 +8,13 @@ intentos = 0
 
 @pedirnumero.route('/', methods=['GET'])
 @pedirnumero.route('/numero', methods=['GET'])
-def adivina_numero():
+def adivina_numero():# Función 1: Inicia el Juego Autor: Mario
+
     """Muestra la página inicial del juego."""
     return render_template('index.html', mensaje=None,puntaje_actual=puntaje_total)
     
 @pedirnumero.route('/adivinar', methods=['GET', 'POST'])
-def procesar_intento():
+def procesar_intento():# Función 4: Conversion de numero, llamado de funciones  Autor: Mario, Isabel
 
     global puntaje_total 
     global intentos
@@ -25,6 +26,20 @@ def procesar_intento():
         
         if not valor_string:
              mensaje_respuesta = "Error: Por favor, ingresa un número."
+        elif valor_string.lower() == 'terminar':
+            
+            puntaje_guardado = puntaje_total
+            
+            id_partida = guardar_puntaje_json(puntaje_guardado) 
+            
+            # Reiniciar puntaje
+            puntaje_total = 0 
+            
+            mensaje_respuesta = (f" Juego Terminado. <br>Tu puntaje de **{puntaje_guardado}** fue guardado.<br>"
+                                 f"ID de partida: **{id_partida}**.<br>"
+                                 f"Numero de intentos: **{intentos}**.<br>"
+                                 f"¡Empieza de nuevo!")
+        
         else:
             try:
                 intento_entero = int(valor_string)

@@ -8,10 +8,10 @@ si es de 20 a 39 gana 25 puntos,
 y si es mas de 40 no gana puntos.
 '''
 from flask import Flask, jsonify, request
-import json
 import random
 
-def puntaje(intento_entero):
+def puntaje(intento_entero):# Función 2: Puntaje y comparacion de numeros Autor: Gabriel y fernando
+
     numero_aleatorio = random.randint(1, 100)
     numero_usuario = intento_entero
     mensaje = ""
@@ -19,35 +19,35 @@ def puntaje(intento_entero):
     if numero_usuario > numero_aleatorio:
         
         if numero_usuario == numero_aleatorio:
-            mensaje= "acertaste"
+            mensaje= "Acertaste"
             puntos = 100
         elif (numero_usuario - numero_aleatorio) <= 9:
-            mensaje="quedaste muy cerca"
+            mensaje="Quedaste muy cerca"
             puntos = 75
         elif (numero_usuario - numero_aleatorio) <= 19:
-            mensaje="quedaste cerca"
+            mensaje="Quedaste cerca"
             puntos = 50
         elif (numero_usuario - numero_aleatorio) <= 39:
-            mensaje="lejos"
+            mensaje="Lejos"
             puntos = 25
         else:
-            mensaje="ni te acercaste"
+            mensaje="Ni te acercaste"
             puntos = 0
     else:
         if numero_usuario == numero_aleatorio:
-            mensaje= "acertaste"
+            mensaje= "Acertaste"
             puntos = 100
         elif (numero_aleatorio - numero_usuario) <= 9:
-            mensaje="quedaste muy cerca"
+            mensaje="Quedaste muy cerca"
             puntos = 75
         elif (numero_aleatorio - numero_usuario) <= 19:
-            mensaje="quedaste cerca"
+            mensaje="Quedaste cerca"
             puntos = 50
         elif (numero_aleatorio - numero_usuario) <= 39:
-            mensaje="lejos"
+            mensaje="Lejos"
             puntos = 25
         else:
-            mensaje="ni te acercaste"
+            mensaje="Ni te acercaste"
             puntos = 0        
     
     return puntos,mensaje,numero_aleatorio

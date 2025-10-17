@@ -1,8 +1,9 @@
 <center><h1>Adivina el numero </h1>
+    <!-- Función 3:Solicitud de Numero Y diseño  Autor: Isabel-->
 <p>Instrucciones: Adivina el numero que esta en el rango del 1 al 100 </p><br>
  <form method="POST" action="/adivinar"> 
-        <input type="text" name="intento" placeholder="Ingresa el número"><br><br> 
-        <button type="submit">Adivinar</button>
+        <input type="text" name="intento"  placeholder="Ingresa el número"><br><br> 
+        <button  type="submit">Adivinar</button>
     </form>
     {% if mensaje %}
         <p class="mensaje" style="color: rgb(97, 0, 105);">{{ mensaje  | safe }}</p>
@@ -17,9 +18,19 @@
     button{
         background-color: rgba(54, 255, 36, 0.705);
         border-radius: 10%;
+        font-size: 15px; /* Tamaño del texto */
+        width: 100px; /* Ancho fijo */
+        height: 40px; /* Alto fijo */
+
     }
     .mensaje{
         font-size: 1.5em;
+    }
+    input{
+        font-size: 15px; /* Tamaño del texto */
+        width: 100px; /* Ancho fijo */
+        height: 40px; /* Alto fijo */
+        size: 50px;
     }
 
 </style>
