@@ -3,7 +3,8 @@ from puntaje import puntaje
 
 pedirnumero = Flask(__name__)
 
-puntaje_total = 0 
+puntaje_total = 0
+intentos = 1
 
 @pedirnumero.route('/', methods=['GET'])
 @pedirnumero.route('/numero', methods=['GET'])
@@ -15,6 +16,7 @@ def adivina_numero():
 def procesar_intento():
 
     global puntaje_total 
+    global intentos
     mensaje_respuesta = "" 
     
     if request.method == 'POST':
