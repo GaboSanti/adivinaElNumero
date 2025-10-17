@@ -33,7 +33,7 @@ def procesar_intento():
                 puntaje_total += puntos_ganados
                 intentos+=1
         
-                mensaje_respuesta = f"El número era {numero_secreto} <br> {mensaje_juego} <br> Ganaste {puntos_ganados} puntos. <br> Total acumulado: {puntaje_total}"
+                mensaje_respuesta = f"El número era {numero_secreto} <br> {mensaje_juego} <br> Ganaste {puntos_ganados} puntos. <br> Total acumulado: {puntaje_total} <br> Numero de juegos: {intentos}"
 
             except ValueError:
                 mensaje_respuesta = "Error: Ingresa un número válido."
